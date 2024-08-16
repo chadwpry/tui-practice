@@ -38,6 +38,8 @@ func (m WelcomeModel) Init() tea.Cmd {
 func (m WelcomeModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.WindowSizeMsg:
+		log.Printf("Welcome.Update(%v)::WindowSizeMsg", msg)
+
 		m.width = msg.Width
 		m.height = msg.Height
 	case tea.KeyMsg:

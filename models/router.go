@@ -85,6 +85,8 @@ func (m RouterModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.height = msg.Height
 		m.help.Width = msg.Width
 
+		log.Printf("Router.Update(%v)::WindowSizeMsg", msg)
+
 		m.models[m.modelKey], cmd = m.models[m.modelKey].Update(msg)
 	case tea.KeyMsg:
 		switch {
